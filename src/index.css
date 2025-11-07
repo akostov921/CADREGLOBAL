@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal design tokens and safe CSS (no @apply with responsive tokens) */
+
+:root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --muted-foreground: 220 5% 70%;
+}
+
+@layer base {
+    html,
+    body {
+        height: 100%
+    }
+    body {
+        background: hsl(var(--background));
+        color: hsl(var(--foreground));
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.6;
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    /* use plain CSS for large headings to avoid Tailwind @apply issues */
+    h1 {
+        font-size: clamp(1.75rem, 4vw, 3.5rem);
+        line-height: 1.05
+    }
+    h2 {
+        font-size: clamp(1.25rem, 3vw, 2.5rem);
+        line-height: 1.15
+    }
+    h3 {
+        font-size: clamp(1rem, 2.2vw, 1.75rem);
+        line-height: 1.2
+    }
+}
+
+
+/* Component-level styles kept simple and CSS-only so Tailwind build won't error */
+
+@layer components {
+    .site-footer {
+        font-size: 1.0625rem;
+        /* ~17px */
+        line-height: 1.6;
+    }
+    .site-footer .footer-brand {
+        font-size: 1.75rem;
+        letter-spacing: .06em
+    }
+    .site-footer .footer-tagline {
+        font-size: 1.125rem;
+        color: hsl(var(--muted-foreground));
+        margin-top: .25rem
+    }
+    .site-footer .footer-contact,
+    .site-footer .footer-links,
+    .site-footer .footer-legal {
+        font-size: 1.0625rem
+    }
+    .site-footer h3 {
+        font-size: 1.5rem;
+        letter-spacing: .08em
+    }
+}
+
+
+/* no stray CLI text or malformed tokens below */
