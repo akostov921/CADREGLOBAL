@@ -1,3 +1,4 @@
+import MembershipSuccess from "@/pages/MembershipSuccess";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -20,6 +21,8 @@ const App = () => {
         <Toaster />
         <BrowserRouter>
         <Routes>
+  <Route path="/membership/success" element={<MembershipSuccess />} />
+
 <Route path="/membership/success" element={<MembershipSuccess />} />
 
           <Route path="/" element={<Index />} />
