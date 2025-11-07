@@ -20,6 +20,8 @@ const App = () => {
         <Toaster />
         <BrowserRouter>
         <Routes>
+<Route path="/membership/success" element={<MembershipSuccess />} />
+
           <Route path="/" element={<Index />} />
           <Route path="/subscription" element={<Subscription />} />
           <Route path="/membership" element={<MembershipApplication />} />
@@ -37,3 +39,5 @@ const App = () => {
 };
 
 export default App;
+
+import MembershipSuccess from "@/pages/MembershipSuccess";
