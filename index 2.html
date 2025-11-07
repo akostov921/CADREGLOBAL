@@ -25,6 +25,11 @@
 <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Netlify needs a static form in the built HTML -->
+    <form name="request-access" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="request-access" />
+    </form>
+
 </body>
 
 </html>
